@@ -5,7 +5,7 @@ import joblib
 model = joblib.load("store_model.pkl")
 st.title("Haftalik Savdo Bashorati")
 
-store = st.number_input("Do'kon raqami", min_value=1, max_value=50, step=1)
+store = st.number_input("Do'kon raqami", min_value=1, max_value=45, step=1)
 temperature = st.number_input("Harorat")
 fuel_price = st.number_input("Yoqilg'i narxi")
 cpi = st.number_input("Iste'mol narxlari indeksi")
@@ -15,7 +15,7 @@ year = st.selectbox("Yil", [2010, 2011, 2012])
 month = st.selectbox("Oy", list(range(1, 13)))
 day = st.selectbox("Kun", list(range(1, 32)))
 
-if st.button("Savdoni predict qilish"):
+if st.button("Wamart do'koni savdosini predict qilish"):
     input_data = pd.DataFrame([{
         "Store": store,
         "Holiday_Flag": 1 if holiday == 'Ha' else 0,
